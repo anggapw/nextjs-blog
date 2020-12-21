@@ -45,7 +45,17 @@
   margin: 0;
 }
 
+.listProject {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .listItem {
+  margin: 0 0 1.25rem;
+}
+
+.listItemProject {
   margin: 0 0 1.25rem;
 }
 
@@ -97,5 +107,15 @@
 @media only screen and (max-width: 600px) {
   .journalContent {
     flex-direction: column;
+  }
+  .contentSection {
+    width: 100%;
+  }
+  .listProject {
+    display: flex;
+    justify-content: space-between;
+  }
+  .listItemProject {
+    margin: 1rem;
   }
 }

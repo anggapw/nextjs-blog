@@ -29,9 +29,9 @@ export default function Journal({ allPostsData, allProjectsData }) {
 
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.contentSection}`}>
                     <h2 className={utilStyles.headingLg}>Project</h2>
-                    <ul className={utilStyles.list}>
+                    <ul className={utilStyles.listProject}>
                         {allProjectsData.map(({ id, date, title, stack, image, link }) => (
-                            <li className={utilStyles.listItem} key={id}>
+                            <li className={utilStyles.listItemProject} key={id}>
                                 <a target="_blank" href={link}>{title}</a>
                                 <div>
                                     <p className={utilStyles.stack}>{stack}</p>
