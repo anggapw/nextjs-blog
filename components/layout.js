@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+// import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Angga Prasetya W'
+export const name = 'Angga Prasetya W'
+export const jobTitle = 'Junior Full Stack Developer'
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, about,journal }) {
     return (
         <div className={styles.container}>
             <Head>
@@ -25,7 +26,15 @@ export default function Layout({ children, home }) {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
-                {home ? (
+                {/* {home ? (
+                    <>
+                        <ul className={styles.unorderedList}>
+                            <li className={styles.list}>Home</li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#about">About</a></li>
+                        </ul>
+                    </>
                     <>
                         <img
                             src="/images/profile.jpg"
@@ -51,13 +60,32 @@ export default function Layout({ children, home }) {
                                 </Link>
                             </h2>
                         </>
-                    )}
+                    )} */}
+                <>
+                    <ul className={styles.ul}>
+                        <li className={styles.list}>
+                            <Link href="/">
+                                <a>Home</a>
+                            </Link>
+                        </li>
+                        <li className={styles.list}>
+                            <Link href="/about">
+                                <a>About Me</a>
+                            </Link>
+                        </li>
+                        <li className={styles.list}>
+                            <Link href="/journal">
+                                <a>Journal</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </>
             </header>
             <main>{children}</main>
-            {!home && (
+            {!home && !about && !journal && (
                 <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
+                    <Link href="/journal">
+                        <a>← Back to journal</a>
                     </Link>
                 </div>
             )}
